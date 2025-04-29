@@ -11,6 +11,8 @@ public class Traversal {
     root.right.left.right = new TreeNode(42);
 
     preOrder(root);
+    System.out.println("-----------------------------");
+    postOrder(root);
   }
 
   public static void preOrder(TreeNode current) {
@@ -25,5 +27,12 @@ public class Traversal {
 
     // search right
     preOrder(current.right);
+  }
+
+  public static void postOrder(TreeNode current) {
+    if (current ==  null) return;
+    postOrder(current.left);
+    postOrder(current.right);
+    System.out.println(current.value);
   }
 }
